@@ -1,0 +1,30 @@
+{
+  "name": "monorepo-test",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev --no-cache --parallel --continue",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "turbo": {
+    "baseBranch": "origin/main",
+    "pipeline": {
+      "dev": {
+        "dependsOn": [
+          "^dev"
+        ]
+      }
+    }
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "turbo": "^1.0.7"
+  }
+}
